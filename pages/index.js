@@ -6,6 +6,8 @@ import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
+import KursaalComponent from '../components/KursaalComponent'
+import data from '../components/data'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
@@ -14,10 +16,11 @@ export default function Index({ allPosts: { edges }, preview }) {
   return (
     <Layout preview={preview}>
       <Head>
-        <title>Next.js Blog Example with {CMS_NAME}</title>
+        <title>{CMS_NAME}</title>
       </Head>
       <Container>
         <Intro />
+        <KursaalComponent />
         {heroPost && (
           <HeroPost
             title={heroPost.title}
