@@ -102,3 +102,15 @@
 .wp-block-media-text {
   @apply grid grid-cols-2 gap-4;
 }
+
+
+ul.films{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+li.filmCard {
+  display: flex;
+  flex-direction: row;
+  min-width: 95vw;
+}

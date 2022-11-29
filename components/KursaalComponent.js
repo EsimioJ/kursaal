@@ -43,8 +43,7 @@ const KursaalComponent = () => {
   // }, []);
   return (
     <>
-      <h1>Kursaal</h1>
-      <ul className="films">
+      <ul className="w-full flex flex-row mx-4 overflow-x-scroll">
         {films.map((film) => {
           const {
             title,
@@ -64,51 +63,57 @@ const KursaalComponent = () => {
           const prossimoT = today.toLocaleTimeString();
 
           for (let i = 0; i < film_occupations.length; i++) {
-            console.log(film_occupations[i].start, title);
+            //console.log(film_occupations[i].start, title);
           }
 
           return (
-            <li key={id} className="shadow">
-              <h2>{title}</h2>
-              <div className="container">
-                <div className="sx">
-                  <img src={img} alt={title} />
-                </div>
-                <div className="sx">
-                  <p>
-                    Trama:
-                    <br />
-                    {plot}
-                  </p>
-                  <h4>Regia: {director}</h4>
-                  <h6>Cast: {cast}</h6>
-                  <p>Durata: {length} minuti</p>
+            <li key={id} className="filmCard">
+              <div className=" basis-1/3 p-4">
+                <img src={img} alt={title} />
+              </div>
+              <div className=" basis-2/3 p-4 mt-2">
+                <h2 className=" text-3xl">{title}</h2>
 
-                  <p>
-                    <a
-                      href={`https://www.youtube.com/watch?v=` + url_trailer}
-                      target="_blank"
-                    >
-                      Trailer
-                    </a>
-                  </p>
-                  <h2 className="center">
-                    Spettacoli:
-                    </h2>
-                    <ul>
+                <h4 className="text-lg mt-2">
+                  <b>Regia:</b> {director}
+                </h4>
+                <h6>
+                  <b>Cast:</b> {cast}
+                </h6>
+                <p>
+                  <b>Durata:</b>
+                  {length} minuti
+                </p>
+                <h2 className=" text-lg mt-2">
+                  <b>Spettacoli:</b>
+                </h2>
+                <ul>
+                  {film_occupations.map((spettacolo) => {
+                    let spettacoloD = new Date(spettacolo.start);
+                    spettacoloD = spettacoloD.toLocaleDateString();
+                    let spettacoloO = new Date(spettacolo.start);
+                    spettacoloO = spettacoloO.toLocaleTimeString();
+                    //console.log(spettacoloD, spettacoloO);
+                    return (
+                      <li className="mt-2" key={spettacolo.projection_public_id}>
+                        {spettacoloD} - {spettacoloO} <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Acquista</button>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <p className="mt-2">
+                  <b>Trama:</b>
+                  <br />
+                  {plot}
+                </p>
 
-                    {film_occupations.map((spettacolo)=>{
-                      let spettacoloD = new Date(spettacolo.start);
-                      spettacoloD = spettacoloD.toLocaleDateString();
-                      let spettacoloO = new Date(spettacolo.start);
-                      spettacoloO = spettacoloO.toLocaleTimeString();
-                      console.log(spettacoloD, spettacoloO);
-                      return (
-                        <li key={spettacolo.projection_public_id}>{spettacoloD} - {spettacoloO}</li>
-                        )
-                      })}
-                      </ul>
-                </div>
+                <button
+                  className="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                  href={`https://www.youtube.com/watch?v=` + url_trailer}
+                  target="_blank"
+                >
+                  Trailer
+                </button>
               </div>
             </li>
           );

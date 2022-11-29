@@ -1,20 +1,31 @@
+import Link from "next/link";
+import { useState } from "react";
+
 const menu = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  function togMenu() {
+    //isMenuOpen = !isMenuOpen; //cambia il valore ma non lo state e quindi non rirenderizza!
+    console.log("tog!", isMenuOpen);
+    setIsMenuOpen(!isMenuOpen);
+  }
+
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <svg
-          className="fill-current h-8 w-8 mr-2"
-          width="54"
-          height="54"
-          viewBox="0 0 54 54"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
-        </svg>
-        <span className="font-semibold text-xl tracking-tight">Cinema Kursaal <br /> Porretta Terme </span>
+    <nav className="flex items-center justify-between flex-wrap  p-6">
+      <div className="flex flex-shrink-0 flex-col mr-6">
+        <Link href="/" className=" ">
+          <h1 className="font-semibold block text-8xl tracking-tight cursor-pointer hover:font-bold">
+            Kursaal.
+          </h1>
+        </Link>
+        <h2 className="text-sm font-thin block">
+          il cinema di Porretta, a volte teatro, molto spesso polis
+        </h2>
       </div>
       <div className="block lg:hidden">
-        <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <button
+          className="flex items-center px-3 py-2 border rounded hover:text-red-500 hover:border-red-500"
+          onClick={() => togMenu()}
+        >
           <svg
             className="fill-current h-3 w-3"
             viewBox="0 0 20 20"
@@ -25,40 +36,44 @@ const menu = () => {
           </svg>
         </button>
       </div>
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div className="text-sm lg:flex-grow">
-          <a
+      <div
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } w-full flex flex-grow lg:block lg:items-center lg:w-auto`}
+      >
+        <div className=" text-lg flex items-center justify-evenly lg:flex-grow">
+          <Link
             href="/"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-red-300 hover:text-red-500 mr-4"
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/prezzi"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-red-300 hover:text-red-500 mr-4"
           >
             Prezzi
-          </a>
-          <a
+          </Link>
+          <Link
             href="/contatti"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+            className="block mt-4 lg:inline-block lg:mt-0 text-red-300 hover:text-red-500"
           >
             Contatti
-          </a>
-          <a
+          </Link>
+          <Link
             href="/meeting-e-congressi"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+            className="block mt-4 lg:inline-block lg:mt-0 text-red-300 hover:text-red-500"
           >
             Meeting e congressi
-          </a>
-        </div>
-        <div>
-          <a
-            href="#"
-            className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-          >
-            Download
-          </a>
+          </Link>
+          <div>
+            <Link
+              href="#"
+              className="inline-block text-sm px-4 py-2 bg-red-500 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+            >
+              Acquista biglietti
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
