@@ -41,7 +41,7 @@ const menu = () => {
           isMenuOpen ? "block" : "hidden"
         } w-full flex flex-grow lg:block lg:items-center lg:w-auto`}
       >
-        <div className=" text-lg flex items-center justify-evenly lg:flex-grow">
+        <div className="absolute lg:relative w-full h-full lg:h-min bg-red-50 text-lg flex flex-col lg:flex-row items-center justify-evenly lg:flex-grow">
           <Link
             href="/"
             className="block mt-4 lg:inline-block lg:mt-0 text-red-300 hover:text-red-500 mr-4"

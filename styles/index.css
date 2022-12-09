@@ -108,9 +108,14 @@ ul.films{
   list-style: none;
   display: flex;
   flex-direction: row;
+    max-height: 300px;
+    overflow-y: hidden;
 }
 li.filmCard {
   display: flex;
   flex-direction: row;
   min-width: 95vw;
 }
+.active{}
+.prev{}
+.next{}

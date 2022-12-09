@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 //const url = "https://kursaal.18tickets.it/api/v2/films/expanded.json";
+import { TicketIcon } from "@heroicons/react/24/outline";
 
 import data from "./data";
 
@@ -31,6 +32,7 @@ const KursaalComponent = () => {
   // }
 
   const [films, setFilms] = useState(data.films);
+  const [active, setActive] = useState(0);
 
   //console.log(films);
   // const getData = async () => {
@@ -43,7 +45,7 @@ const KursaalComponent = () => {
   // }, []);
   return (
     <>
-      <ul className="w-full flex flex-row mx-4 overflow-x-scroll">
+      <ul className="films w-full flex flex-row mx-4 overflow-x-scroll">
         {films.map((film) => {
           const {
             title,
@@ -67,8 +69,42 @@ const KursaalComponent = () => {
           }
 
           return (
-            <li key={id} className="filmCard">
-              <div className=" basis-1/3 p-4">
+            <li key={id} className="filmCard bg-white">
+              <Spettacolo {...film} />
+            </li>
+          );
+        })}
+      </ul>
+      <div class="w-full flex justify-center items-center mt-8">
+        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-0 px-2 rounded-l">
+          Prev
+        </button>
+        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-0 px-2 rounded-r">
+          Next
+        </button>
+      </div>
+    </>
+  );
+};
+
+
+
+
+ function Spettacolo({
+  title,
+  id,
+  length,
+  playbill_path: img,
+  plot,
+  cast,
+  director,
+  film_url,
+  url_trailer,
+  film_occupations,
+}) {
+  return (
+    <div>
+      <div className=" basis-1/3 p-4">
                 <img src={img} alt={title} />
               </div>
               <div className=" basis-2/3 p-4 mt-2">
@@ -95,8 +131,15 @@ const KursaalComponent = () => {
                     spettacoloO = spettacoloO.toLocaleTimeString();
                     //console.log(spettacoloD, spettacoloO);
                     return (
-                      <li className="mt-2" key={spettacolo.projection_public_id}>
-                        {spettacoloD} - {spettacoloO} <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Acquista</button>
+                      <li
+                        className="mt-2"
+                        key={spettacolo.projection_public_id}
+                      >
+                        {spettacoloD} - {spettacoloO}{" "}
+                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
+                          Acquista
+                        </button>
+                        <TicketIcon className="h-6 w-6 text-red-500 hover:text-red-700" />
                       </li>
                     );
                   })}
@@ -115,12 +158,11 @@ const KursaalComponent = () => {
                   Trailer
                 </button>
               </div>
-            </li>
-          );
-        })}
-      </ul>
-    </>
-  );
-};
+    </div>
+  )
+}
+
+
+
 
 export default KursaalComponent;
