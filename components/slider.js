@@ -1,11 +1,24 @@
-import React, { useState } from "react";
-import data from "./olddata";
+import React, { useEffect, useState } from "react";
+import data from "./data";
 import Slide from "./slide";
 
 function slider() {
   const filmArray = data.films;
-  console.log(filmArray);
+  //   console.log(filmArray);
   const [active, setActive] = useState(0);
+  const [isHover, setIsHover] = useState(false);
+
+  const hoverCheck = (val) => {
+    //setIsHover(val)
+    console.log(val);
+    if (val === false) {
+      console.log("Vai");
+      setIsHover(false);
+    } else {
+      console.log("Ferma");
+      setIsHover(true);
+    }
+  };
 
   const nextFilm = () => {
     setActive((prevSlide) => {
@@ -25,18 +38,32 @@ function slider() {
     });
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (isHover === false) {
+        nextFilm();
+      }
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [active]);
+
   filmArray.sort((a, b) => {
     a = new Date(a.film_occupations[0].start);
     a = a.getTime();
     b = new Date(b.film_occupations[0].start);
     b = b.getTime();
-    console.log(a, b);
+    // console.log(a, b);
     return a - b;
   });
 
   return (
-    <section>
-      <div className="slider">
+    <section className=" m-auto w-full xl:w-[70%] bg-black pt-6">
+      <div
+        className="slider"
+        onMouseOver={() => hoverCheck(true)}
+        onMouseLeave={() => hoverCheck(false)}
+      >
         {/* <div className="w-full flex relative overflow-x-hidden flex-nowrap h-[400px] bg-red-500"> */}
         {filmArray.map((film, index) => {
           let positionClass = "";
@@ -55,8 +82,12 @@ function slider() {
         })}
       </div>
       <div className="btn-group">
-        <button className="btn" onClick={nextFilm}>prev</button>
-        <button className="btn" onClick={nextFilm}>next</button>
+        <button className="btn" onClick={prevFilm}>
+          prev
+        </button>
+        <button className="btn" onClick={nextFilm}>
+          next
+        </button>
       </div>
     </section>
   );

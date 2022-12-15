@@ -20,10 +20,11 @@ export default function Index({ allPosts: { edges }, preview }) {
         <title>{CMS_NAME}</title>
       </Head>
       {/* <KursaalComponent /> */}
-      <section className=" w-full text-center">
-        <Slider />
-      </section>
+
+      <Slider />
+
       <Container>
+        <h2 className=" mt-20 text-4xl font-black">ultime dal Blog..</h2>
         {heroPost && (
           <HeroPost
             title={heroPost.title}
