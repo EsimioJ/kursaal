@@ -23,7 +23,7 @@ export default function Index({ allPosts: { edges }, preview }) {
 
       <Slider />
 
-      <Container>
+      {/* <Container>
         <h2 className=" mt-20 text-4xl font-black">ultime dal Blog..</h2>
         {heroPost && (
           <HeroPost
@@ -36,7 +36,7 @@ export default function Index({ allPosts: { edges }, preview }) {
           />
         )}
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container>
+      </Container> */}
     </Layout>
   );
 }
