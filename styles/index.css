@@ -161,7 +161,7 @@ li.filmCard {
   flex-wrap: nowrap;
   overflow-x: hidden;
   position: relative;
-  min-height: 400px;
+  min-height: 550px;
   width: 100%;
   background: black;
   border-top-width: 30px;
@@ -226,5 +226,5 @@ li.filmCard {
   box-shadow: var(--dark-shadow);
   text-align: left;
   color: white;
-  max-height: 300px;
+  max-height: 450px;
 }

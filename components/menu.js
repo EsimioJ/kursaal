@@ -10,14 +10,14 @@ const menu = () => {
   }
 
   return (
-    <nav className="flex items-center justify-between flex-wrap  p-6">
-      <div className="flex flex-shrink-0 flex-col mr-6">
+    <nav className="flex items-end justify-between flex-wrap pb-6 px-2 md:px-6">
+      <div className="flex flex-shrink-0 flex-col items-end mr-2 md:mr-6">
         <Link href="/" className=" ">
-          <h1 className="font-semibold block text-8xl tracking-tight cursor-pointer hover:font-bold">
+          <h1 className="font-semibold block text-7xl md:text-8xl tracking-tight cursor-pointer hover:font-bold">
             Kursaal.
           </h1>
         </Link>
-        <h2 className="text-sm font-thin block">
+        <h2 className="text-xs md:text-sm font-thin block -mt-2 md:-mt-8">
           il cinema di Porretta, a volte teatro, molto spesso polis
         </h2>
       </div>
