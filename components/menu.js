@@ -10,7 +10,7 @@ const menu = () => {
   }
 
   return (
-    <nav className="flex items-end justify-between flex-wrap pb-6 px-2 md:px-6">
+    <nav className="flex items-center md:items-end justify-between flex-wrap pb-6 px-2 md:px-6">
       <div className="flex flex-shrink-0 flex-col items-end mr-2 md:mr-6">
         <Link href="/" className=" ">
           <h1 className="font-semibold block text-7xl md:text-8xl tracking-tight cursor-pointer hover:font-bold">
