@@ -1,5 +1,6 @@
 import React from "react";
 import { TicketIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 function slide({
   title,
@@ -17,11 +18,11 @@ function slide({
   return (
     <div className={`slide z-20 ${classes}`}>
       {/* <div className=" flex w-[90%] absolute"> */}
-      <div className="film">
-        <div className=" basis-1/3 p-0 md:p-4">
-          <img src={img} alt={title} />
+      <div className="film flex-col md:flex-row ">
+        <div className="basis-auto md:basis-2/4 p-0 md:p-4 bg-black/50 mt-0 md:mt-2">
+          <Image src={img} alt={title} width="200" height="400" className=" float-right h-fit md:h-[41vh] min-w-fit w-full md:w-auto" />
         </div>
-        <div className=" basis-2/3 p-4 mt-2 overflow-y-scroll">
+        <div className="basis-auto md:basis-2/4 p-0 md:p-4 bg-black/50 -mt-96 md:mt-2 overflow-y-scroll">
           <h2 className=" text-3xl">{title}</h2>
 
           <h2 className=" text-lg mt-2">
@@ -58,9 +59,7 @@ function slide({
           </p>
 
           <p className="mt-2">
-            <b>Trama:</b>
-            <br />
-            {plot}
+            <b>Trama:</b> {plot}
           </p>
 
           <button

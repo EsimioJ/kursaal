@@ -12,6 +12,7 @@ module.exports = {
       '2.gravatar.com',
       'secure.gravatar.com',
       'i0.wp.com',
+      'cdn.18tickets.net',
     ],
   },
 }

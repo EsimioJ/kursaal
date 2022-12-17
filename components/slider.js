@@ -82,10 +82,10 @@ function slider() {
         })}
       </div>
       <div className="btn-group">
-        <button className="btn" onClick={prevFilm}>
+        <button className="btn hover:bg-red-500" onClick={prevFilm}>
           prev
         </button>
-        <button className="btn" onClick={nextFilm}>
+        <button className="btn hover:bg-red-500" onClick={nextFilm}>
           next
         </button>
       </div>
