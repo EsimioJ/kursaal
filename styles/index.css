@@ -225,7 +225,5 @@ li.filmCard {
   box-shadow: var(--dark-shadow);
   text-align: left;
   color: white;
-  max-height: 450px;
-  overflow-y: scroll;
   min-width: 100%;
 }

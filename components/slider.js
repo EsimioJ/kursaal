@@ -81,7 +81,7 @@ function slider() {
           return <Slide key={film.id} {...film} classes={positionClass} />;
         })}
       </div>
-      <div className="btn-group max-w-full md:max-w-[70%]">
+      <div className="btn-group max-w-full lg:max-w-[70%]">
         <button className="btn hover:bg-red-500" onClick={prevFilm}>
           prev
         </button>
