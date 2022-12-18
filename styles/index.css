@@ -213,10 +213,8 @@ li.filmCard {
   -webkit-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
-  width: 100%;
   position: absolute;
   margin-top: -20px;
-  max-width: 70%;
 }
 .film {
   display: flex;
