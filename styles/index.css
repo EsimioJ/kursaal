@@ -159,7 +159,7 @@ li.filmCard {
 .slider {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   min-height: 550px;
   width: 100%;
@@ -193,13 +193,14 @@ li.filmCard {
   display: inline-block;
   border: none;
   padding: 0.4rem 1.25rem;
-  box-shadow: var(--light-shadow);
+  box-shadow: var(--dark-shadow);
   letter-spacing: var(--letter-spacing);
   transition: var(--btn-transition);
   cursor: pointer;
   font-weight: 900;
   text-transform: uppercase;
   background: white;
+  border: 2px solid black;
   margin: 10px;
 }
 
@@ -214,7 +215,7 @@ li.filmCard {
   justify-content: space-between;
   width: 100%;
   position: absolute;
-  margin-top: -40px;
+  margin-top: -20px;
 }
 .film {
   display: flex;
@@ -226,4 +227,6 @@ li.filmCard {
   text-align: left;
   color: white;
   max-height: 450px;
+  overflow-y: scroll;
+  min-width: 100%;
 }

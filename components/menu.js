@@ -23,7 +23,7 @@ const menu = () => {
       </div>
       <div className="block lg:hidden">
         <button
-          className="flex items-center px-3 py-2 border rounded hover:text-red-500 hover:border-red-500"
+          className="flex items-center px-3 py-2 border-2 text-black  hover:text-red-500 hover:border-black"
           onClick={() => togMenu()}
         >
           <svg
@@ -41,34 +41,35 @@ const menu = () => {
           isMenuOpen ? "block" : "hidden"
         } w-full flex flex-grow lg:block lg:items-center lg:w-auto`}
       >
-        <div className="fixed top-2/6 left-0 z-30 lg:relative w-full h-4/6 lg:h-min bg-red-50 text-lg flex flex-col lg:flex-row items-center justify-evenly lg:flex-grow">
+        <div className="fixed top-2/6 left-0 z-30 lg:relative w-full h-5/6 lg:h-min bg-white/95 text-3xl font-bold flex flex-col lg:flex-row items-center justify-evenly lg:flex-grow">
           <Link
             href="/"
-            className="block mt-4 lg:inline-block lg:mt-0 text-red-300 hover:text-red-500 mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-red-500 mr-4"
           >
             Home
           </Link>
           <Link
             href="/prezzi"
-            className="block mt-4 lg:inline-block lg:mt-0 text-red-300 hover:text-red-500 mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-red-500 mr-4"
           >
             Prezzi
           </Link>
           <Link
             href="/contatti"
-            className="block mt-4 lg:inline-block lg:mt-0 text-red-300 hover:text-red-500"
+            className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-red-500"
           >
             Contatti
           </Link>
           <Link
             href="/meeting-e-congressi"
-            className="block mt-4 lg:inline-block lg:mt-0 text-red-300 hover:text-red-500"
+            className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-red-500"
           >
             Meeting e congressi
           </Link>
           <div>
             <Link
-              href="#"
+              href="https://kursaal.18tickets.it/film/"
+              target='_blank'
               className="inline-block text-sm px-4 py-2 bg-red-500 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
             >
               Acquista biglietti

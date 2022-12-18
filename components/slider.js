@@ -43,7 +43,7 @@ function slider() {
       if (isHover === false) {
         nextFilm();
       }
-    }, 5000);
+    }, 500000);
 
     return () => clearTimeout(timer);
   }, [active]);
@@ -58,7 +58,7 @@ function slider() {
   });
 
   return (
-    <section className=" m-auto w-full xl:w-[70%] bg-black pt-6">
+    <section className=" m-auto w-full xl:w-[70%] bg-black py-6">
       <div
         className="slider"
         onMouseOver={() => hoverCheck(true)}
