@@ -21,7 +21,7 @@ function slide({
       {/* <div className=" flex w-[90%] absolute"> */}
       <div className="film flex-col md:flex-row absolute md:relative">
         <div className="basis-auto md:basis-2/4 p-0 md:p-4 bg-black/50 mt-0 md:mt-2">
-          <Image src={img} alt={title} width="200" height="400" className=" float-right h-fit md:h-[41vh] min-w-fit w-full md:w-auto" />
+          <Image src={img} alt={title} width="200" height="400" className=" float-right h-fit md:h-[400px] min-w-fit w-full md:w-auto" />
         </div>
         <div className="basis-auto md:basis-2/4 p-0 md:p-4 bg-black/60 w-[88vw] mt-72 md:mt-2 h-full absolute md:relative">
           <h2 className=" text-3xl bg-black/60">{title}</h2>

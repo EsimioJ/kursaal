@@ -216,6 +216,7 @@ li.filmCard {
   width: 100%;
   position: absolute;
   margin-top: -20px;
+  max-width: 70%;
 }
 .film {
   display: flex;
