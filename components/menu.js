@@ -1,13 +1,16 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const menu = () => {
+const menu = (temal) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   function togMenu() {
     //isMenuOpen = !isMenuOpen; //cambia il valore ma non lo state e quindi non rirenderizza!
     console.log("tog!", isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
   }
+
+
 
   return (
     <nav className="flex items-center md:items-end justify-between flex-wrap pb-6 px-2 md:px-6">
@@ -23,7 +26,7 @@ const menu = () => {
       </div>
       <div className="block lg:hidden">
         <button
-          className="flex items-center px-3 py-2 border-2 text-black  hover:text-red-500 hover:border-black"
+          className="flex items-center px-3 py-2 border-2 text-gray-500  hover:text-red-500 hover:border-black"
           onClick={() => togMenu()}
         >
           <svg
@@ -69,7 +72,7 @@ const menu = () => {
           <div>
             <Link
               href="https://kursaal.18tickets.it/film/"
-              target='_blank'
+              target="_blank"
               className="inline-block text-sm px-4 py-2 bg-red-500 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
             >
               Acquista biglietti

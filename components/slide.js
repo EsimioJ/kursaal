@@ -26,8 +26,8 @@ function slide({
         <div className="basis-auto md:basis-2/4 p-0 md:p-4 bg-black/60 w-[88vw] mt-72 md:mt-2 h-full absolute md:relative max-h-[450px]  overflow-hidden md:overflow-y-scroll">
           <h2 className=" text-3xl bg-black/60">{title}</h2>
 
-          <h2 className=" text-lg mt-2">
-            <b>Spettacoli:</b>
+          <h2 className=" text-lg font-extrabold mt-2">
+            Spettacoli:
           </h2>
           <ul className=" max-w-[470px] flex flex-nowrap justify-start overflow-x-scroll">
             {film_occupations.map((spettacolo) => {

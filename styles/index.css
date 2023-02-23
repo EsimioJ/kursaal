@@ -227,3 +227,8 @@ li.filmCard {
   color: white;
   min-width: 100%;
 }
+
+.dark{
+  color:white;
+  background-color: #000000;
+}

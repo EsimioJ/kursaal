@@ -1,10 +1,11 @@
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import data from "./data";
 import Slide from "./slide";
 
 function slider() {
   const filmArray = data.films;
-  //   console.log(filmArray);
+  console.log("filmArray", filmArray);
   const [active, setActive] = useState(0);
   const [isHover, setIsHover] = useState(false);
 
@@ -55,7 +56,7 @@ function slider() {
     b = b.getTime();
     // console.log(a, b);
     return a - b;
-  });
+  }); 
 
   return (
     <section className=" m-auto w-full xl:w-[70%] bg-black py-6">
@@ -81,12 +82,18 @@ function slider() {
           return <Slide key={film.id} {...film} classes={positionClass} />;
         })}
       </div>
-      <div className="btn-group max-w-full lg:max-w-[70%]">
-        <button className="btn hover:bg-red-500" onClick={prevFilm}>
-          prev
+      <div className="-top-80 relative z-50 max-w-full flex flex-1 justify-between">
+        <button
+          className="w-10 h-[90px] dark:bg-gray-400 hover:bg-red-500 "
+          onClick={prevFilm}
+        >
+          <ChevronLeftIcon />
         </button>
-        <button className="btn hover:bg-red-500" onClick={nextFilm}>
-          next
+        <button
+          className="w-10 h-[90px] dark:bg-gray-400 hover:bg-red-500"
+          onClick={nextFilm}
+        >
+          <ChevronRightIcon />
         </button>
       </div>
     </section>
