@@ -7,6 +7,7 @@ import { getAllPostsForHome } from "../lib/api";
 import { CMS_NAME } from "../lib/constants";
 import Slider from "../components/slider";
 
+
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node;
   const morePosts = edges.slice(1);
@@ -21,6 +22,10 @@ export default function Index({ allPosts: { edges }, preview }) {
       <Slider />
 
       <Container>
+
+
+
+
         <h2 className=" mt-20 text-4xl font-black">ultime dal Blog..</h2>
         {heroPost && (
           <HeroPost
@@ -46,3 +51,4 @@ export async function getStaticProps({ preview = false }) {
     revalidate: 10,
   };
 }
+

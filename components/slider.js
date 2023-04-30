@@ -1,11 +1,12 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
-import data from "./data";
 import Slide from "./slide";
 
-function slider() {
-  const filmArray = data.films;
+
+ function slider({ films }) {
+  const filmArray = films.films;
   console.log("filmArray", filmArray);
+
   const [active, setActive] = useState(0);
   const [isHover, setIsHover] = useState(false);
 
@@ -98,6 +99,22 @@ function slider() {
       </div>
     </section>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch(
+    "https://kursaal.18tickets.it/api/v2/films/expanded.json"
+  );
+  const data = await res.json();
+
+  console.log("DATA ",data);
+
+  return {
+    props: {
+      films: data,
+    },
+    revalidate: 10 * 60 * 24, 
+  };
 }
 
 export default slider;
